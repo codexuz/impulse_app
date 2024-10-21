@@ -68,7 +68,6 @@ import {  micSharp } from 'ionicons/icons';
 import { VoiceRecorder  } from 'capacitor-voice-recorder';
 import Progress from './Progress.vue';
 import ResultPage from './ResultPage.vue';
-import { feedbackSpeaking } from '@/lib/openai';
 import { useStore } from '@/stores/store';
 const store = useStore();
 
@@ -276,7 +275,12 @@ async function evaluateAnswers() {
   }).join("\n");
  
   console.log(formattedAnswers)
-  const response = await feedbackSpeaking(formattedAnswers);
+  const formData = new FormData();
+  formData.append("userResponse", formattedAnswers);
+  const response = await fetch("https://edumoacademy.uz/api/feed", {
+    method: 'POST',
+    body: formData
+  });
   providedFeedback.value = JSON.parse(response) || "No feedback provided.\n\n"
   console.log(providedFeedback.value.band);
   await store.updateBand(providedFeedback.value.band);
