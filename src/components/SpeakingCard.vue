@@ -101,7 +101,7 @@ const finishButton = ref(false);
 const showResultPage = ref(false)
 const answersArray = ref([])
 const providedFeedback = ref({
-  band: 0,
+  band: '',
   feed: '',
   fluency: '',
   coh: '',
