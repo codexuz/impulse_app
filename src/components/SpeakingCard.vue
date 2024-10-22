@@ -89,7 +89,7 @@ import Video8 from '@/assets/audios/8.mp4';
 // State Variables
 const showIntro = ref(true)
 const isSpeakingStart = ref(false);
-const currentIndex = ref(6);
+const currentIndex = ref(0);
 const videoRef = useTemplateRef('video')
 const speakingText = ref('');
 const showReadyButton = ref(false);
