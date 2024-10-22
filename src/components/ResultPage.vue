@@ -39,7 +39,7 @@ import { IonCard, IonCardContent, IonCardHeader, IonCardTitle, IonCardSubtitle, 
 
 defineProps({
     level: String,
-    score: Number,
+    score: String,
     gr_score: Number
 })
 </script>
