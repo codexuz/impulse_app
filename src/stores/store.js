@@ -7,7 +7,7 @@ export const useStore = defineStore('main', {
         result: {
           score: 0,
           level: '',
-          band: 0
+          band: ''
 
         }
     }),
