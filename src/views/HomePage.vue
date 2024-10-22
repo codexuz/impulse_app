@@ -108,7 +108,7 @@ import SpeakingCard from '../components/SpeakingCard.vue';
 import { useStore } from '@/stores/store';
 const store = useStore();
 
-const isGrammarPart = ref(true)
+const isGrammarPart = ref(false)
 const currentQuestionIndex = ref(0)
 const isStarted = ref(false);
 const selectedAnswer = ref(null); // To store the selected answer
